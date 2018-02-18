@@ -21,40 +21,40 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.12.3:jar" level="project" />
     <orderEntry type="library" name="sbt: software.amazon.ion:ion-java:1.0.2:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-xml_2.12:1.0.6:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.json4s:json4s-scalap_2.12:3.5.2:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.json4s:json4s-native_2.12:3.5.2:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.json4s:json4s-jackson_2.12:3.5.2:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.json4s:json4s-core_2.12:3.5.2:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.json4s:json4s-ast_2.12:3.5.2:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.apache.httpcomponents:httpcore:4.4.4:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.apache.httpcomponents:httpclient:4.5.2:jar" level="project" />
-    <orderEntry type="library" name="sbt: net.sourceforge.jtds:jtds:1.3.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: joda-time:joda-time:2.8.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: commons-logging:commons-logging:1.1.3:jar" level="project" />
-    <orderEntry type="library" name="sbt: commons-codec:commons-codec:1.9:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.thoughtworks.paranamer:paranamer:2.8:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.6.7:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.fasterxml.jackson.core:jackson-databind:2.8.4:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.fasterxml.jackson.core:jackson-core:2.8.4:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.fasterxml.jackson.core:jackson-annotations:2.8.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.amazonaws:jmespath-java:1.11.258:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.amazonaws:aws-lambda-java-events:1.3.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.amazonaws:aws-lambda-java-core:1.1.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-sqs:1.11.209:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-sns:1.11.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-s3:1.11.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-kms:1.11.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-kinesis:1.11.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-dynamodb:1.11.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-core:1.11.258:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-cognitoidentity:1.11.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-cloudwatch:1.11.258:jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest_2.12:3.0.3:jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="sbt: org.scalactic:scalactic_2.12:3.0.3:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scala-lang:scala-reflect:2.12.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.12.4:jar" level="project" />
     <orderEntry type="library" scope="TEST" name="sbt: org.scala-lang.modules:scala-parser-combinators_2.12:1.0.4:jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="sbt: org.scala-lang:scala-reflect:2.12.3:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalactic:scalactic_2.12:3.0.3:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest_2.12:3.0.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-cloudwatch:1.11.258:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-cognitoidentity:1.11.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-core:1.11.258:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-dynamodb:1.11.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-kinesis:1.11.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-kms:1.11.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-s3:1.11.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-sns:1.11.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.amazonaws:aws-java-sdk-sqs:1.11.209:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.amazonaws:aws-lambda-java-core:1.1.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.amazonaws:aws-lambda-java-events:1.3.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.amazonaws:jmespath-java:1.11.258:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.fasterxml.jackson.core:jackson-annotations:2.8.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.fasterxml.jackson.core:jackson-core:2.8.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.fasterxml.jackson.core:jackson-databind:2.8.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.6.7:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.thoughtworks.paranamer:paranamer:2.8:jar" level="project" />
+    <orderEntry type="library" name="sbt: commons-codec:commons-codec:1.9:jar" level="project" />
+    <orderEntry type="library" name="sbt: commons-logging:commons-logging:1.1.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: joda-time:joda-time:2.8.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: net.sourceforge.jtds:jtds:1.3.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.httpcomponents:httpclient:4.5.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.httpcomponents:httpcore:4.4.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.json4s:json4s-ast_2.12:3.5.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.json4s:json4s-core_2.12:3.5.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.json4s:json4s-jackson_2.12:3.5.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.json4s:json4s-native_2.12:3.5.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.json4s:json4s-scalap_2.12:3.5.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-xml_2.12:1.0.6:jar" level="project" />
   </component>
 </module>
