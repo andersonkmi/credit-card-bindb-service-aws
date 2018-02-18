@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.json4s:json4s-scalap_2.12:3.5.2:jar">
+    <CLASSES>
+      <root url="jar://D:/ivy/.ivy/cache/org.json4s/json4s-scalap_2.12/jars/json4s-scalap_2.12-3.5.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/ivy/.ivy/cache/org.json4s/json4s-scalap_2.12/srcs/json4s-scalap_2.12-3.5.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

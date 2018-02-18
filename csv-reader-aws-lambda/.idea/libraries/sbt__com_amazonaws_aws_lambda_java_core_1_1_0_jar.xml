@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: com.amazonaws:aws-lambda-java-core:1.1.0:jar">
+    <CLASSES>
+      <root url="jar://D:/ivy/.ivy/cache/com.amazonaws/aws-lambda-java-core/jars/aws-lambda-java-core-1.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/ivy/.ivy/cache/com.amazonaws/aws-lambda-java-core/srcs/aws-lambda-java-core-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

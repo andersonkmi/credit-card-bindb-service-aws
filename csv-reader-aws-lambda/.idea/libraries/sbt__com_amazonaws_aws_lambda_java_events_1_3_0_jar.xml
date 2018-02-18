@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: com.amazonaws:aws-lambda-java-events:1.3.0:jar">
+    <CLASSES>
+      <root url="jar://D:/ivy/.ivy/cache/com.amazonaws/aws-lambda-java-events/jars/aws-lambda-java-events-1.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/ivy/.ivy/cache/com.amazonaws/aws-lambda-java-events/srcs/aws-lambda-java-events-1.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

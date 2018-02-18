@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: com.amazonaws:aws-java-sdk-cognitoidentity:1.11.0:jar">
+    <CLASSES>
+      <root url="jar://D:/ivy/.ivy/cache/com.amazonaws/aws-java-sdk-cognitoidentity/jars/aws-java-sdk-cognitoidentity-1.11.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/ivy/.ivy/cache/com.amazonaws/aws-java-sdk-cognitoidentity/srcs/aws-java-sdk-cognitoidentity-1.11.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
