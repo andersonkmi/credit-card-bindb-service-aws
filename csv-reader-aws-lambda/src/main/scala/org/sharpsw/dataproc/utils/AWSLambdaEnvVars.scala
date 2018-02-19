@@ -1,4 +1,4 @@
-package org.sharpsw.dataproc
+package org.sharpsw.dataproc.utils
 
 object AWSLambdaEnvVars {
   val RecordSQSUrl = "RECORD_SQS_URL"
