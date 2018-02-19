@@ -7,10 +7,5 @@ case class BinRecord(
   cardType: String,
   level: String,
   isoCountry: String,
-  info: String,
-  countryIso: String,
-  countryIso2: String,
-  countryIso3: String,
-  url: String,
-  phone: String
+  info: String
 )
