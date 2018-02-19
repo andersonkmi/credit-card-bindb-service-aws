@@ -7,6 +7,8 @@ import com.amazonaws.services.lambda.runtime.events.S3Event
 import com.amazonaws.services.s3.AmazonS3ClientBuilder
 import com.amazonaws.services.s3.event.S3EventNotification.S3EventNotificationRecord
 import com.amazonaws.services.s3.model.GetObjectRequest
+import org.sharpsw.dataproc.data.BinRecord
+import org.json4s.jackson.Serialization.write
 
 class Main {
   def processFileContents(event: S3Event): String = {
@@ -29,7 +31,9 @@ class Main {
     var line:String = null
 
     while ({line = reader.readLine; line != null}) {
-      println(line)
+      val tokens = line.split(",")
+      val record = BinRecord(tokens(0), tokens(1), tokens(2), tokens(3), tokens(4), tokens(5), tokens(6), tokens(7), tokens(8), tokens(9), tokens(10), tokens(11))
+      val json = write(record)
     }
     reader.close
   }
