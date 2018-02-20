@@ -10,6 +10,7 @@ import com.amazonaws.services.s3.model.GetObjectRequest
 import org.json4s.{DefaultFormats, Formats}
 import org.sharpsw.dataproc.data.BinRecord
 import org.json4s.jackson.Serialization.write
+import org.sharpsw.dataproc.utils.Queue.enqueue
 
 object Main {
   protected implicit lazy val jsonFormats: Formats = DefaultFormats
@@ -37,7 +38,7 @@ object Main {
       val tokens = line.split(",")
       val record = BinRecord(tokens(0), tokens(1), tokens(2), tokens(3), tokens(4), tokens(5), tokens(6))
       val json = write(record)
-      println(json)
+      enqueue(json)
     }
     reader.close
   }
