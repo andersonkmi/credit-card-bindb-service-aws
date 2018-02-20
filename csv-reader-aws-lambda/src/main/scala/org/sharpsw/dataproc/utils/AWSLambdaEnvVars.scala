@@ -6,4 +6,7 @@ object AWSLambdaEnvVars {
 
   val FieldSeparator = "FIELD_SEPARATOR"
   val FieldSeparatorDefaultValue = ","
+
+  val KinesisDataStream = "KINESIS_DATA_STREAM"
+  val KinesisDataStreamDefaultValue = "bindb-data-stream"
 }
