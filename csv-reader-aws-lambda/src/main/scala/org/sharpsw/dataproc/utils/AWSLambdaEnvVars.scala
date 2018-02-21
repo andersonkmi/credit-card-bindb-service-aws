@@ -11,8 +11,8 @@ object AWSLambdaEnvVars {
   val KinesisDataStreamDefaultValue = "bindb-data-stream"
 
   val DataStreamingMode = "DATA_STREAMING_MODE"
-  val DataStreamingModeDefaultValue = "sqs"
+  val DataStreamingModeDefaultValue = "batch"
 
-  val SqsDataStreaming = "sqs"
-  val kinesisDataStreaming = "kinesis"
+  val BatchDataStreaming = "batch"
+  val RealTimeDataStreaming = "realtime"
 }

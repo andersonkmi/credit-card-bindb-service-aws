@@ -22,8 +22,8 @@ object S3FileReader {
     while ({line = reader.readLine; line != null}) {
       val tokens = line.split(Properties.envOrElse(FieldSeparator, FieldSeparatorDefaultValue))
       val record = BinRecord(tokens(0), tokens(1), tokens(2), tokens(3), tokens(4), tokens(5), tokens(6))
-      if(Properties.envOrElse(DataStreamingMode, DataStreamingModeDefaultValue).equalsIgnoreCase(SqsDataStreaming)) enqueue(record) else putRecord(record, Properties.envOrElse(KinesisDataStream, KinesisDataStreamDefaultValue))
+      if(Properties.envOrElse(DataStreamingMode, DataStreamingModeDefaultValue).equalsIgnoreCase(BatchDataStreaming)) enqueue(record) else putRecord(record, Properties.envOrElse(KinesisDataStream, KinesisDataStreamDefaultValue))
     }
-    reader.close
+    reader.close()
   }
 }
