@@ -6,4 +6,13 @@ object AWSLambdaEnvVars {
 
   val FieldSeparator = "FIELD_SEPARATOR"
   val FieldSeparatorDefaultValue = ","
+
+  val KinesisDataStream = "KINESIS_DATA_STREAM"
+  val KinesisDataStreamDefaultValue = "bindb-data-stream"
+
+  val DataStreamingMode = "DATA_STREAMING_MODE"
+  val DataStreamingModeDefaultValue = "batch"
+
+  val BatchDataStreaming = "batch"
+  val RealTimeDataStreaming = "realtime"
 }
