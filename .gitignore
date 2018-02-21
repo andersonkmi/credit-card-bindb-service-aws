@@ -68,3 +68,4 @@ jrebel.lic
 # paulp script
 /.lib/
 csv-reader-aws-lambda/.idea
+bindb-consumer-aws-lambda/.idea
