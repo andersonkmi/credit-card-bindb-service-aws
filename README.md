@@ -9,4 +9,4 @@ This project is composed of the following modules so far:
 
 # High-level Architecture
 
-![alt text](https://github.com/andersonkmi/credit-card-bindb-service-aws/img/architecture.jpg "Architecture")
+![alt text](https://github.com/andersonkmi/credit-card-bindb-service-aws/raw/master/img/architecture.jpg "Architecture")
