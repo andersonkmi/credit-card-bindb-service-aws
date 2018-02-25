@@ -10,7 +10,13 @@ object AWSLambdaEnvVars {
   val MaxNumberOfMessages = "MAX_NUMBER_MESSAGES"
   val MaxNumberOfMessagesDefault = "10"
 
+  val IterationsCount = "ITERATIONS_COUNT"
+  val IterationsCountDefault = "2"
+
   val MetricDimensionName = "METRIC_DIMENSION_NAME"
 
   val MetricNamespace = "METRIC_NAMESPACE"
+
+  val BinDbDynamoTable = "BINDB_RECORD_TABLE"
+  val BinDbDynamoTableDefault = "BinDBRecord"
 }
