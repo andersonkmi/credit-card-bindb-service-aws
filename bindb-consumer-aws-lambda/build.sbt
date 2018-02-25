@@ -21,9 +21,9 @@ lazy val root = (project in file(".")).
     libraryDependencies += "com.amazonaws" % "aws-java-sdk-core" % "1.11.281",
     libraryDependencies += "com.amazonaws" % "aws-java-sdk-cloudwatch" % "1.11.258",
     libraryDependencies += "com.amazonaws" % "aws-java-sdk-kinesis" % "1.11.281",
+    libraryDependencies += "com.amazonaws" % "aws-java-sdk-dynamodb" % "1.11.280",
     libraryDependencies += "org.json4s" %% "json4s-native" % "3.5.2",
     libraryDependencies += "org.json4s" %% "json4s-jackson" % "3.5.2",
     libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3",
-    libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.7.2",
-    libraryDependencies += "net.sourceforge.jtds" % "jtds" % "1.3.1"
+    libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.7.2"
   )
