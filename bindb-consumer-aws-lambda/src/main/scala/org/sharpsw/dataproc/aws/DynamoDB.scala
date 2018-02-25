@@ -17,7 +17,7 @@ object DynamoDB {
   private val CardTypeField: String = "cardType"
   private val LevelField: String = "level"
   private val IsoCountryField: String = "isoCountry"
-  private val InfoField: String = "info"
+  private val CountryCodeField: String = "countryCode"
 
   def putRecord(record: BinRecord): Boolean = {
     val values = Map(
@@ -27,14 +27,15 @@ object DynamoDB {
       CardTypeField -> new AttributeValue().withS(record.cardType),
       LevelField -> new AttributeValue().withS(record.level),
       IsoCountryField -> new AttributeValue().withS(record.isoCountry),
-      InfoField -> new AttributeValue().withS(record.info)
+      CountryCodeField -> new AttributeValue().withS(record.countryCode)
     ).asJava
 
     try {
       dynamoService.putItem(Properties.envOrElse(BinDbDynamoTable, BinDbDynamoTableDefault), values)
       true
     } catch {
-      case _: Exception => {
+      case exception: Exception => {
+        println(exception.getMessage)
         false
       }
     }
