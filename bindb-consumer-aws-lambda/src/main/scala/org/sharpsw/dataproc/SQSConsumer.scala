@@ -6,7 +6,7 @@ import org.sharpsw.dataproc.utils.JsonConverter
 
 import scala.util.Properties
 
-object SQSConsumer {
+class SQSConsumer {
   def processMessages() : String = {
     val numberIterations: Int = Properties.envOrElse(IterationsCount, IterationsCountDefault).trim.toInt
 
