@@ -26,7 +26,8 @@ lazy val root = (project in file(".")).
     libraryDependencies += "org.json4s" %% "json4s-jackson" % "3.5.2",
     libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3",
     libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.7.2",
-    libraryDependencies += "net.sourceforge.jtds" % "jtds" % "1.3.1"
+    libraryDependencies += "net.sourceforge.jtds" % "jtds" % "1.3.1",
+    libraryDependencies += "com.fasterxml.jackson.dataformat" % "jackson-dataformat-cbor" % "2.9.4"
   )
 
 
