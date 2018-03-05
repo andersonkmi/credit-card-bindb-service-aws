@@ -69,3 +69,5 @@ jrebel.lic
 /.lib/
 csv-reader-aws-lambda/.idea
 bindb-consumer-aws-lambda/.idea
+custom-auth-aws-lambda/.idea
+custom-auth-aws-lambda/target/
