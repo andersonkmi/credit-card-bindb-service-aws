@@ -1,17 +1,25 @@
 package org.sharpsw.sakura
 
-import com.amazonaws.services.lambda.runtime.Context
+import com.amazonaws.services.lambda.runtime.{Context, RequestHandler}
+import org.json4s.{DefaultFormats, Formats}
+import org.sharpsw.sakura.auth.AuthResponse
+
 import scala.collection.JavaConverters._
 
-object Main {
-  def authenticate(event: java.util.Map[String, Object], context: Context): String = {
-    event.asScala.foreach(item => println(item._1))
-    println(event.asScala.get("headers").toString)
+class Main extends RequestHandler[java.util.Map[String, Object], AuthResponse]{
+  protected implicit lazy val jsonFormats: Formats = DefaultFormats
 
-    //println("headers")
-    //headers.foreach(item => println(item._1))
-    //println("Auth token: " + authToken)
+  override def handleRequest(event: java.util.Map[String, Object], context: Context): AuthResponse = {
 
-    AuthResponse.generate
+    event.asScala.foreach(item => println(item._1 + " / " + item._2))
+    val headers = event.get("headers")
+
+    headers match {
+      case Some(x: String) => println(x)
+      case y: java.util.Map[_, _] => y.asScala.foreach(item => println(item._1 + "/" + item._2))
+      //case Some(y: java.util.LinkedHashMap[_, _]) => y.asScala.foreach(item => println(item._1 + "/" + item._2))
+      case _ => println("something else")
+    }
+    new AuthResponse().setEffect("allow").setPrincipalId("kelly_ito").setResource(event.get("methodArn").toString)
   }
 }
