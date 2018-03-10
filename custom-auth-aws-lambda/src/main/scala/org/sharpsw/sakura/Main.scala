@@ -17,7 +17,6 @@ class Main extends RequestHandler[java.util.Map[String, Object], AuthResponse]{
     headers match {
       case Some(x: String) => println(x)
       case y: java.util.Map[_, _] => y.asScala.foreach(item => println(item._1 + "/" + item._2))
-      //case Some(y: java.util.LinkedHashMap[_, _]) => y.asScala.foreach(item => println(item._1 + "/" + item._2))
       case _ => println("something else")
     }
     new AuthResponse().setEffect("allow").setPrincipalId("kelly_ito").setResource(event.get("methodArn").toString)
