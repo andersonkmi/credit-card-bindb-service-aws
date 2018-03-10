@@ -1,14 +1,11 @@
 package org.sharpsw.sakura
 
 import com.amazonaws.services.lambda.runtime.{Context, RequestHandler}
-import org.json4s.{DefaultFormats, Formats}
 import org.sharpsw.sakura.auth.AuthResponse
 
 import scala.collection.JavaConverters._
 
-class Main extends RequestHandler[java.util.Map[String, Object], AuthResponse]{
-  protected implicit lazy val jsonFormats: Formats = DefaultFormats
-
+object Main extends RequestHandler[java.util.Map[String, Object], AuthResponse]{
   override def handleRequest(event: java.util.Map[String, Object], context: Context): AuthResponse = {
 
     event.asScala.foreach(item => println(item._1 + " / " + item._2))
