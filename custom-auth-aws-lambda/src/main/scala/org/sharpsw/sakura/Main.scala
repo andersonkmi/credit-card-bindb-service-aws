@@ -2,20 +2,37 @@ package org.sharpsw.sakura
 
 import com.amazonaws.services.lambda.runtime.{Context, RequestHandler}
 import org.sharpsw.sakura.auth.AuthResponse
+import org.sharpsw.sakura.service.AWSLambdaEnvVars.{AuthenticationHeader, AuthenticationHeaderDefault, MethodArnHeader, MethodArnHeaderDefault}
+import org.sharpsw.sakura.service.AuthDynamoDB.isAuthorized
 
 import scala.collection.JavaConverters._
+import scala.util.Properties
 
-object Main extends RequestHandler[java.util.Map[String, Object], AuthResponse]{
+class Main extends RequestHandler[java.util.Map[String, Object], AuthResponse] {
+
   override def handleRequest(event: java.util.Map[String, Object], context: Context): AuthResponse = {
+    println("Starting authentication process")
 
-    event.asScala.foreach(item => println(item._1 + " / " + item._2))
-    val headers = event.get("headers")
+    val headers = event.asScala("headers")
+    val methodArn = event.asScala(Properties.envOrElse(MethodArnHeader, MethodArnHeaderDefault)).toString
 
     headers match {
-      case Some(x: String) => println(x)
-      case y: java.util.Map[_, _] => y.asScala.foreach(item => println(item._1 + "/" + item._2))
-      case _ => println("something else")
+      case x: java.util.Map[String, Object] => authenticate(x, methodArn)
+      case _ => invalidate
     }
-    new AuthResponse().setEffect("allow").setPrincipalId("kelly_ito").setResource(event.get("methodArn").toString)
   }
+
+  private def authenticate(headers: java.util.Map[String, Object], methodArn: String): AuthResponse = {
+    val authenticationHeader = headers.asScala(Properties.envOrElse(AuthenticationHeader, AuthenticationHeaderDefault)).toString
+    val authResult = isAuthorized(authenticationHeader)
+    if(authResult._2) {
+      println("Authentication OK for token: " + authenticationHeader)
+      new AuthResponse().setEffect("allow").setPrincipalId(authResult._1).setResource(methodArn)
+    } else {
+      println("Authentication failed for token: " + authenticationHeader)
+      new AuthResponse().setEffect("deny").setPrincipalId(authResult._1).setResource(methodArn)
+    }
+  }
+
+  private def invalidate = new AuthResponse().setEffect("deny").setPrincipalId("invalid").setResource("invalid")
 }
