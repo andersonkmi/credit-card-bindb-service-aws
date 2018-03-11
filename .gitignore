@@ -71,3 +71,5 @@ csv-reader-aws-lambda/.idea
 bindb-consumer-aws-lambda/.idea
 custom-auth-aws-lambda/.idea
 custom-auth-aws-lambda/target/
+api-gw-aws-lambda/.idea
+api-gw-aws-lambda/target/
