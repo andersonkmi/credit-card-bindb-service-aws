@@ -4,8 +4,8 @@ object AWSLambdaEnvVars {
   val AuthenticationDynamoDBTable = "AUTH_TABLE_NAME"
   val AuthenticationDynamoDBTableDefault = "SakuraAuthentication"
 
-  val AuthenticationHeader = "AUTH_HEADER_NAME"
-  val AuthenticationHeaderDefault = "Authentication"
+  val AuthorizationHeader = "AUTHORIZATION_HEADER_NAME"
+  val AuthorizationHeaderDefault = "authorization"
 
   val MethodArnHeader = "METHOD_ARN"
   val MethodArnHeaderDefault = "methodArn"

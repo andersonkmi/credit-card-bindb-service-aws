@@ -2,7 +2,7 @@ package org.sharpsw.sakura
 
 import com.amazonaws.services.lambda.runtime.{Context, RequestHandler}
 import org.sharpsw.sakura.auth.AuthResponse
-import org.sharpsw.sakura.service.AWSLambdaEnvVars.{AuthenticationHeader, AuthenticationHeaderDefault, MethodArnHeader, MethodArnHeaderDefault}
+import org.sharpsw.sakura.service.AWSLambdaEnvVars.{AuthorizationHeader, AuthorizationHeaderDefault, MethodArnHeader, MethodArnHeaderDefault}
 import org.sharpsw.sakura.service.AuthDynamoDB.isAuthorized
 
 import scala.collection.JavaConverters._
@@ -12,7 +12,7 @@ class Main extends RequestHandler[java.util.Map[String, Object], AuthResponse] {
 
   override def handleRequest(event: java.util.Map[String, Object], context: Context): AuthResponse = {
     println("Starting authentication process")
-
+    println(event.asScala)
     val headers = event.asScala("headers")
     val methodArn = event.asScala(Properties.envOrElse(MethodArnHeader, MethodArnHeaderDefault)).toString
 
@@ -23,7 +23,7 @@ class Main extends RequestHandler[java.util.Map[String, Object], AuthResponse] {
   }
 
   private def authenticate(headers: java.util.Map[String, Object], methodArn: String): AuthResponse = {
-    val authenticationHeader = headers.asScala(Properties.envOrElse(AuthenticationHeader, AuthenticationHeaderDefault)).toString
+    val authenticationHeader = headers.asScala(Properties.envOrElse(AuthorizationHeader, AuthorizationHeaderDefault)).toString
     val authResult = isAuthorized(authenticationHeader)
     if(authResult._2) {
       println("Authentication OK for token: " + authenticationHeader)
