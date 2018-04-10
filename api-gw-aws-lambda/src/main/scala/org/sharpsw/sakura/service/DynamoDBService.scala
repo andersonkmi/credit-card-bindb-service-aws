@@ -26,7 +26,7 @@ object DynamoDBService {
         val brand           = items.get("brand").getS
         val cardType        = items.get("cardType").getS
         val countryCode     = items.get("countryCode").getS
-        val isoCountryCode  = items.get("isoCountryCode").getS
+        val isoCountryCode  = items.get("isoCountry").getS
         val level           = items.get("level").getS
         val response = new BinDBResponse()
         response.setBin(binNumber)
