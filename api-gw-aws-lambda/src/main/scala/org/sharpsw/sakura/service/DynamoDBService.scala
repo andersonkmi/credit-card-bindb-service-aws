@@ -20,7 +20,7 @@ object DynamoDBService {
     val items = Option(result.getItem)
 
     items match {
-      case Some(items) => {
+      case Some(items) =>
         val binNumber       = items.get("bin").getS
         val bank            = items.get("bank").getS
         val brand           = items.get("brand").getS
@@ -37,8 +37,7 @@ object DynamoDBService {
         response.setIsoCountry(isoCountryCode)
         response.setLevel(level)
         response
-      }
-      case _ => val response = new BinDBResponse()
+      case None => val response = new BinDBResponse()
         response.setBin("00000")
         response.setBank("")
         response.setBrand("")
@@ -47,7 +46,6 @@ object DynamoDBService {
         response.setIsoCountry("")
         response.setLevel("")
         response
-
     }
 
   }
