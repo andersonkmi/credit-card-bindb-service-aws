@@ -1,4 +1,4 @@
-# Sakura - Credit card bindb service
+# Sakura MK I - Credit card bindb service
 Project using AWS Lambda and Scala for CSV processing and loading into DynamoDB with bindb information (based on BinDB csv file)
 
 # Modules
