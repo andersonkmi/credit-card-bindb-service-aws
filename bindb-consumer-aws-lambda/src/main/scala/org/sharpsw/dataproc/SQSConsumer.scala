@@ -1,24 +1,19 @@
 package org.sharpsw.dataproc
 
-import org.sharpsw.dataproc.AWSLambdaEnvVars.{IterationsCount, IterationsCountDefault}
+import com.amazonaws.services.lambda.runtime.Context
+import com.amazonaws.services.lambda.runtime.events.SQSEvent
 import org.sharpsw.dataproc.aws.DynamoDB.putRecord
 import org.sharpsw.dataproc.utils.JsonConverter
+import scala.collection.JavaConverters._
 
-import scala.util.Properties
-
-class SQSConsumer {
-  def processMessages() : String = {
-    val numberIterations: Int = Properties.envOrElse(IterationsCount, IterationsCountDefault).trim.toInt
-
-    for(_ <- 0 until numberIterations) {
-      val messages = BinSQSProcessor.getMessages
-      println("# of messages: " + messages.size)
-      process(messages)
-    }
+object SQSConsumer {
+  def processMessages(event: SQSEvent, context: Context) : String = {
+    val records = event.getRecords.asScala.map(item => (item.getReceiptHandle, item.getBody))
+    records.foreach(process(_))
     "Done"
   }
 
-  private def process(items: Map[String, String]) : Unit = {
+  private def process(items: List[(String, String)]) : Unit = {
     if (items.nonEmpty) {
       try {
         items.foreach(x => processSingleMessage(x))
