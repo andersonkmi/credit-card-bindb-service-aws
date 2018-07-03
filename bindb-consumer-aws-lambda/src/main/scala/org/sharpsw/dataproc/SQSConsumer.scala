@@ -8,8 +8,8 @@ import scala.collection.JavaConverters._
 
 object SQSConsumer {
   def processMessages(event: SQSEvent, context: Context) : String = {
-    val records = event.getRecords.asScala.map(item => (item.getReceiptHandle, item.getBody))
-    records.foreach(process(_))
+    val records = event.getRecords.asScala.map(item => (item.getReceiptHandle, item.getBody)).toList
+    process(records)
     "Done"
   }
 
@@ -25,8 +25,6 @@ object SQSConsumer {
   }
 
   private def processSingleMessage(item: (String, String)) : Unit = {
-    if(putRecord(JsonConverter.convertBinInfo(item._2))) {
-      BinSQSProcessor.deleteMessage(item._1)
-    } else println("Message '" + item._2 + "' skipped")
+    putRecord(JsonConverter.convertBinInfo(item._2))
   }
 }
