@@ -1,6 +1,6 @@
 import Dependencies._
 
-val appVersion = "1.0.0"
+val appVersion = "1.0.1"
 
 val appName = "bindb-consumer-aws-lambda"
 
@@ -16,9 +16,10 @@ lazy val root = (project in file(".")).
     assemblyJarName in assembly := appName + "-" + appVersion + ".jar",
     libraryDependencies += scalaTest % Test,
     libraryDependencies += "com.amazonaws" % "aws-lambda-java-core" % "1.2.0",
-    libraryDependencies += "com.amazonaws" % "aws-lambda-java-events" % "2.0.1",
-    libraryDependencies += "com.amazonaws" % "aws-java-sdk-sqs" % "1.11.281",
-    libraryDependencies += "com.amazonaws" % "aws-java-sdk-core" % "1.11.281",
+    libraryDependencies += "com.amazonaws" % "aws-lambda-java-events" % "2.2.1",
+    libraryDependencies += "com.amazonaws" % "aws-java-sdk-sqs" % "1.11.358",
+    libraryDependencies += "com.amazonaws" % "aws-java-sdk-core" % "1.11.358",
+    libraryDependencies += "com.amazonaws" % "aws-java-sdk-lambda" % "1.11.358",
     libraryDependencies += "com.amazonaws" % "aws-java-sdk-cloudwatch" % "1.11.258",
     libraryDependencies += "com.amazonaws" % "aws-java-sdk-kinesis" % "1.11.281",
     libraryDependencies += "com.amazonaws" % "aws-java-sdk-dynamodb" % "1.11.280",
