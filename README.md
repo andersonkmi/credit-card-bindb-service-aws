@@ -7,7 +7,7 @@ This project is composed of the following modules so far:
 - api-gw-aws-lambda: Lambdas used by API gateway.
 - sakura-bindb-consumer-aws-lambda: responsible for consuming the records sent to Kinesis/SQS and loading them into DynamoDB. It can be found at https://github.com/andersonkmi/sakura-bindb-consumer-aws-lambda.
 - sakura-csv-reader-aws-lambda: responsible for reading the CSV file uploaded to S3 and splitting it into messages for SQS. It can be found at https://github.com/andersonkmi/sakura-csv-reader-aws-lambda.
-- custom-auth-aws-lambda: custom authorizer to be used with API gateway.
+- custom-auth-aws-lambda: custom authorizer to be used with API gateway. It can be found at https://github.com/andersonkmi/sakura-custom-auth-aws-lambda.
 
 # High-level Architecture
 
